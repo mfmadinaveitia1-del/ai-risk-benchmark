@@ -47,6 +47,10 @@ window.dash=(function(){
 .ai-head{margin-bottom:var(--cds-gap-lg)}
 .ai-title{font-family:var(--font-anthropic-serif);font-weight:400;font-size:var(--cds-font-size-title);margin:0 0 var(--cds-gap-xs)}
 .ai-take{color:var(--color-fg-muted);font-size:var(--cds-font-size-body);margin:0;max-width:60rem}
+.ai-about{background:var(--color-panel);border:1px solid var(--color-border-line);border-left:3px solid var(--c1);border-radius:var(--cds-radius);padding:var(--cds-pad-md) var(--cds-pad-lg);margin:var(--cds-gap-md) 0;max-width:60rem}
+.ai-about p{margin:0 0 var(--cds-gap-sm);font-size:var(--cds-font-size-body);line-height:1.5}
+.ai-about p:last-child{margin-bottom:0}
+.ai-about .ai-about-k{font-size:var(--cds-font-size-caption);text-transform:uppercase;letter-spacing:.06em;color:var(--color-fg-muted);margin-bottom:var(--cds-gap-xs)}
 .ai-take b{font-weight:600;color:var(--color-fg)}
 .ai-wrap{display:grid;grid-template-columns:minmax(0,15rem) minmax(0,1fr);gap:var(--cds-gap-lg)}
 @media (max-width:820px){.ai-wrap{grid-template-columns:minmax(0,1fr)}}
@@ -120,6 +124,12 @@ window.dash=(function(){
 <div class="ai-page">
   <header class="ai-head">
     <h1 class="ai-title" id="top">AI risk benchmark: rogue agents, military AI &amp; command paradoxes</h1>
+    <div class="ai-about" id="about">
+      <p class="ai-about-k">About this dashboard</p>
+      <p><b>What it is:</b> a research companion to the proposal <i>When the chain of command breaks: forecasting authority failures in AI agents</i>. It brings together public 2025–26 AI agent incidents, a China, Russia and US comparison of military AI, an FMEA-style incident forecast, and a likelihood ranking of 370 catalogued chain-of-command paradoxes.</p>
+      <p><b>Goal:</b> to anticipate which authority failures (an agent's chain of command becoming inconsistent, unverifiable or compromised) are most likely to appear next in real deployments, before they happen. Aviation's long record of automation-versus-pilot conflicts, such as Qantas 72, Air France 447 and China Airlines 140, serves as the analogue, and risks are ranked with FMEA, the standard aerospace method.</p>
+      <p class="ai-note">Incident evidence comes from public disclosures and research reports, not independently verified. Likelihood, FMEA and tier scores are the author's judgement, not statistical forecasts.</p>
+    </div>
     <p class="ai-take" id="takeaway"><b data-source="kpis" data-field="real_world" data-row="0">—</b> of <b data-source="kpis" data-field="total" data-row="0">—</b> logged incidents touched real systems or real operations. Every real-world Russia case involves Russian operators misusing foreign models, not a Russian model acting on its own.</p>
   </header>
 
