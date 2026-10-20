@@ -13,4 +13,6 @@ Concept digital twin of an A320 Family final assembly line, rendered as an inter
 
 **Synthetic data:** layout, cycle times, rates, defect rates, costs and station numbers are invented for this concept and do not represent any manufacturer's data.
 
+**Kiosk use:** the page holds a screen wake lock while it is open and visible, so a wall display will not dim or sleep (toggle in the Line pulse panel). If the GPU context is lost it reloads itself.
+
 Open `index.html` in a browser, or view it via GitHub Pages.

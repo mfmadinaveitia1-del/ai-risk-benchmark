@@ -338,6 +338,7 @@ button:focus-visible{outline:2px solid var(--twin);outline-offset:2px}
       <span><i style="background:var(--twin)"></i>Twin ghost, in flow</span>
       <span><i style="background:var(--warn)"></i>Blocked / travelled work</span>
     </div>
+    <button class="linkbtn" id="bWake" aria-pressed="true">Keep screen awake: on</button>
     <p class="note">All figures are synthetic data generated for this concept, not real production data.</p>
   </aside>
   <div id="toast" class="toast" hidden></div>
@@ -1173,6 +1174,20 @@ function frame(now){
   hudT-=dt; if(hudT<=0){ hudT=.4; renderPulse(); renderLive(); }
   requestAnimationFrame(frame);
 }
+
+/* keep the display awake for kiosk / wall-screen use, and recover from GPU resets */
+let wakeLock=null, wantAwake=true;
+function updateWakeUI(){ const b=$('#bWake'); if(!b) return; b.setAttribute('aria-pressed',wantAwake);
+  b.textContent=!wantAwake?'Keep screen awake: off':wakeLock?'Keep screen awake: on':('wakeLock' in navigator)?'Keep screen awake: waiting for focus':'Keep screen awake: not supported by this browser'; }
+async function requestWake(){ if(!wantAwake||wakeLock||!('wakeLock' in navigator)||document.visibilityState!=='visible'){ updateWakeUI(); return; }
+  try{ wakeLock=await navigator.wakeLock.request('screen'); wakeLock.addEventListener('release',()=>{ wakeLock=null; updateWakeUI(); if(wantAwake) setTimeout(requestWake,1000); }); }catch(_){ wakeLock=null; }
+  updateWakeUI(); }
+document.addEventListener('visibilitychange',()=>{ if(document.visibilityState==='visible'){ last=performance.now(); requestWake(); } });
+['pointerdown','keydown'].forEach(ev=>addEventListener(ev,()=>{ if(!wakeLock) requestWake(); },{passive:true}));
+setInterval(()=>{ if(!wakeLock) requestWake(); },30000);
+$('#bWake').addEventListener('click',()=>{ wantAwake=!wantAwake; if(!wantAwake&&wakeLock){ const l=wakeLock; wakeLock=null; l.release().catch(()=>{}); } requestWake(); toast(wantAwake?'The screen will stay on while this page is open.':'The screen can sleep again.'); });
+canvas.addEventListener('webglcontextlost',e=>{ e.preventDefault(); setTimeout(()=>location.reload(),1500); });
+requestWake();
 
 newSim(); CP=cpm(LIVE); updateFeederTags(); syncControls(); resize();
 setCam(70,10,fitZoom(.56),DEF_TH,DEF_PHI);
