@@ -207,6 +207,104 @@ button { font: inherit; color: inherit; }
 .src em { font-style: normal; color: var(--faint); font-size: 11px; }
 .s-iot { color: var(--iot); } .s-edge { color: var(--edge); } .s-twin { color: var(--accent); } .s-agent { color: var(--agent); }
 
+
+/* Synthetic-data notice */
+.synth { display: flex; gap: 12px; align-items: flex-start; padding: 10px 14px; border: 1px solid color-mix(in srgb, var(--warn) 40%, var(--line)); border-left: 4px solid var(--warn); border-radius: var(--r); background: color-mix(in srgb, var(--warn) 7%, var(--panel)); }
+.synth .ic { flex: none; width: 20px; height: 20px; margin-top: 1px; border-radius: 50%; border: 1.5px solid var(--warn); color: var(--warn); display: grid; place-items: center; font: 700 12px/1 var(--font-mono); }
+.synth p { margin: 0; font-size: 12.5px; line-height: 1.5; color: var(--muted); max-width: 140ch; }
+.synth b { color: var(--fg); font-weight: 600; }
+.synth .tag { display: inline-block; margin-right: 8px; padding: 1px 7px; border-radius: 3px; border: 1px solid var(--warn); color: var(--warn); font: 600 10px/1.5 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
+
+/* CTQ tolerance control */
+.qbody { padding: 12px; display: grid; gap: 12px; }
+.qnote { margin: 0; color: var(--muted); font-size: 11.5px; line-height: 1.5; max-width: 120ch; }
+.qnote b { color: var(--fg); font-weight: 500; }
+.qtiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.qtile { background: var(--bg); border: 1px solid var(--line); border-radius: var(--r); padding: 8px 11px; display: grid; gap: 3px; min-width: 0; }
+.qtile span { font: 500 9.5px var(--font-mono); color: var(--muted); letter-spacing: .1em; text-transform: uppercase; }
+.qtile b { font: 500 20px/1.1 var(--font-mono); font-variant-numeric: tabular-nums; }
+.qtile small { color: var(--muted); font-size: 11px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ctq-wrap { border: 1px solid var(--line); border-radius: var(--r); }
+.ctq tbody tr { cursor: pointer; }
+.ctq tbody tr:hover td { background: color-mix(in srgb, var(--panel-2) 60%, transparent); }
+.ctq tbody tr[aria-selected="true"] td { background: var(--panel-2); }
+.qcharts { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) minmax(0, 1.2fr); gap: 10px; }
+.qcard { background: var(--bg); border: 1px solid var(--line); border-radius: var(--r); padding: 10px 12px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.qh { margin: 0; font: 600 10.5px/1.3 var(--font-display); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.qh b { color: var(--fg); font-weight: 600; }
+.qcanvas { width: 100%; height: 230px; display: block; cursor: crosshair; }
+
+.ladder { display: grid; gap: 3px; }
+.lad-row, .lad-axis { display: grid; grid-template-columns: 118px minmax(0, 1fr) 44px; gap: 8px; align-items: center; }
+.lad-row { width: 100%; background: none; border: 1px solid transparent; border-radius: 4px; padding: 5px 6px; cursor: pointer; text-align: left; }
+.lad-row:hover { background: color-mix(in srgb, var(--panel-2) 60%, transparent); }
+.lad-row[aria-pressed="true"] { border-color: var(--line); background: var(--panel-2); }
+.lad-n { font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lad-track { position: relative; height: 16px; }
+.lad-track .ref { position: absolute; top: -4px; bottom: -4px; width: 1px; background: var(--line); }
+.lad-track .ref.six { width: 2px; margin-left: -1px; background: color-mix(in srgb, var(--edge) 70%, transparent); }
+.lad-bar { position: absolute; left: 0; top: 4px; height: 8px; width: 0; border-radius: 0 4px 4px 0; background: var(--c, var(--accent)); transition: width .3s; }
+.lad-v { font: 500 12px var(--font-mono); text-align: right; font-variant-numeric: tabular-nums; }
+.lad-axis { padding: 0 7px; }
+.lad-axis .ax { position: relative; height: 30px; }
+.lad-axis .ax span { position: absolute; top: 2px; transform: translateX(-50%); text-align: center; font: 400 9.5px/1.35 var(--font-mono); color: var(--muted); white-space: nowrap; }
+.lad-axis .ax span.six { color: var(--edge); }
+.lad-axis .ax-cap { align-self: start; padding-top: 2px; text-align: right; font: 400 9.5px/1.35 var(--font-mono); color: var(--faint); }
+.pcard .dl b.dn, .pcard .dl b.upx { white-space: nowrap; }
+.lad-key { display: flex; flex-wrap: wrap; gap: 4px 12px; font: 400 10.5px var(--font-mono); color: var(--muted); }
+.lad-key i { display: inline-block; width: 12px; height: 6px; border-radius: 0 3px 3px 0; margin-right: 5px; vertical-align: middle; }
+
+/* Customer pain points */
+.pain { padding: 12px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 14px; }
+.pcol { display: grid; gap: 10px; align-content: start; min-width: 0; }
+.pareto { display: grid; gap: 4px; }
+.pp { display: grid; grid-template-columns: 22px minmax(0, 200px) minmax(0, 1fr); gap: 8px; align-items: center; padding: 4px 6px; border-radius: 4px; }
+.pp:hover { background: var(--panel-2); }
+.pp .rk { font: 500 10.5px var(--font-mono); color: var(--faint); }
+.pp.top .rk { color: var(--accent); }
+.pp .nm { font-size: 12px; min-width: 0; }
+.pp .nm small { display: block; color: var(--muted); font-size: 10.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pp .trk { display: grid; grid-template-columns: minmax(0, 1fr) 92px; gap: 8px; align-items: center; }
+.pp .bw i { display: block; height: 10px; border-radius: 0 4px 4px 0; background: var(--faint); }
+.pp.top .bw i { background: var(--accent); }
+.pp .trk span { font: 400 11px var(--font-mono); color: var(--muted); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+.pp.top .trk span { color: var(--fg); }
+.top3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.pcard { background: var(--bg); border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: var(--r); padding: 10px 12px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.pcard .rk { font: 500 9.5px var(--font-mono); color: var(--accent); letter-spacing: .1em; text-transform: uppercase; }
+.pcard h4 { margin: 0; font: 700 13px/1.25 var(--font-display); letter-spacing: .05em; text-transform: uppercase; text-wrap: balance; }
+.pcard .big { font: 500 28px/1 var(--font-mono); font-variant-numeric: tabular-nums; }
+.pcard .big em { font: 400 11px var(--font-body); font-style: normal; color: var(--muted); margin-left: 4px; }
+.pcard .dl { font: 400 11px var(--font-mono); color: var(--muted); }
+.pcard .dl b { font-weight: 500; }
+.dn { color: var(--edge); } .upx { color: var(--crit); }
+.mbars { display: flex; align-items: flex-end; gap: 2px; height: 46px; border-bottom: 1px solid var(--line); }
+.mbars i { flex: 1; min-height: 2px; border-radius: 2px 2px 0 0; background: color-mix(in srgb, var(--accent) 45%, transparent); }
+.mbars i:last-child { background: var(--accent); }
+.mbars i:hover { background: var(--fg); }
+.mlab { display: flex; justify-content: space-between; font: 400 9.5px var(--font-mono); color: var(--faint); margin-top: -4px; }
+.pcard dl { margin: 0; display: grid; gap: 6px; }
+.pcard dt { font: 500 9.5px var(--font-mono); color: var(--muted); letter-spacing: .1em; text-transform: uppercase; }
+.pcard dd { margin: 1px 0 0; font-size: 12px; }
+.pcard dd.live { font-family: var(--font-mono); font-size: 11.5px; }
+
+.qtip { position: fixed; z-index: 20; pointer-events: none; background: var(--panel-2); border: 1px solid var(--faint); border-radius: var(--r); padding: 6px 9px; font: 400 11px/1.5 var(--font-mono); color: var(--fg); box-shadow: 0 8px 24px rgb(0 0 0 / .5); max-width: 280px; }
+.qtip[hidden] { display: none; }
+
+@media (max-width: 1100px) {
+  .qcharts, .pain { grid-template-columns: minmax(0, 1fr); }
+  .qtiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 680px) {
+  .top3 { grid-template-columns: minmax(0, 1fr); }
+  .pp { grid-template-columns: 22px minmax(0, 1fr); }
+  .pp .trk { grid-column: 2; }
+  .lad-row, .lad-axis { grid-template-columns: 86px minmax(0, 1fr) 40px; }
+  .lad-axis small { display: none; }
+  .lad-axis .ax { height: 18px; }
+  .synth { padding: 10px 12px; }
+}
+
 @media (max-width: 1100px) {
   .brief { grid-template-columns: minmax(0, 1fr); }
 }
@@ -235,12 +333,17 @@ button { font: inherit; color: inherit; }
 </head>
 <body>
 <div class="app">
+  <aside class="synth" role="note" aria-label="Synthetic data notice">
+    <span class="ic" aria-hidden="true">!</span>
+    <p><span class="tag">Synthetic data</span><b>This model has been built entirely with synthetic data.</b> Sensor streams, inspection measurements, CTQ capability figures and customer pain-point counts are generated by the simulation or invented for illustration. None of it comes from, or describes, a real aircraft programme, production line, supplier or customer.</p>
+  </aside>
+
   <header class="top">
     <div class="brand">
       <div class="mark" aria-hidden="true"></div>
       <div>
         <h1>Fuselage Join Twin</h1>
-        <small>A320-family · section 15/21 join cell · 6 robots · 11 agents · concept simulation</small>
+        <small>A320-family · section 15/21 join cell · 6 robots · 11 agents · concept simulation · synthetic data</small>
       </div>
     </div>
     <span class="pill-mode"><i></i><span>Twin live · 50 Hz</span></span>
@@ -346,6 +449,60 @@ button { font: inherit; color: inherit; }
         <thead><tr><th>Indicator</th><th>Type</th><th>Live</th><th>Threshold</th><th>Status</th><th>Data path</th><th>Why it matters</th></tr></thead>
         <tbody></tbody>
       </table>
+    </div>
+  </section>
+
+  <section class="panel" id="ctqPanel">
+    <div class="panel-h">Critical-to-quality tolerance control · capability vs Six Sigma <span class="count">5 CTQs · rolling 400 holes</span></div>
+    <div class="qbody">
+      <p class="qnote">EDGE-01 measures every inspected hole against five <b>critical-to-quality (CTQ)</b> characteristics. Capability is recomputed live over the last 400 holes, so the scripted R3 spindle fault shows up as oversize, out-of-square holes. Select a CTQ to see its distribution and control chart.</p>
+      <div class="qtiles">
+        <div class="qtile"><span>Holes measured · this run</span><b id="qtN">0</b><small>+ 360 holes of synthetic history</small></div>
+        <div class="qtile"><span>CTQs at Six Sigma</span><b id="qtSix">–</b><small>Cpk ≥ 2.00</small></div>
+        <div class="qtile"><span>CTQs below Cpk 1.33</span><b id="qtLow">–</b><small id="qtLowN">–</small></div>
+        <div class="qtile"><span>Out of tolerance · this run</span><b id="qtOut">0</b><small id="qtOutN">CTQ violations sent to rework</small></div>
+      </div>
+      <div class="ind-wrap ctq-wrap">
+        <table class="ind ctq" id="ctq">
+          <thead><tr><th>CTQ characteristic</th><th>Tolerance</th><th>n</th><th>Mean</th><th>σ within</th><th>Cp</th><th>Cpk</th><th>Ppk</th><th>Sigma level</th><th>Est. DPMO</th><th>Out of tol</th><th>Status</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="qcharts">
+        <div class="qcard">
+          <h3 class="qh">Sigma level by CTQ · target 6σ</h3>
+          <div class="ladder" id="ladder"></div>
+          <div class="lad-axis"><span class="ax-cap">σ level<small><br>Cpk</small></span><div class="ax" id="ladAx"></div><span></span></div>
+          <div class="lad-key"><span><i style="background:var(--edge)"></i>≥ 6σ</span><span><i style="background:color-mix(in srgb,var(--edge) 50%,var(--faint))"></i>Capable ≥ 4σ</span><span><i style="background:var(--warn)"></i>Marginal 3–4σ</span><span><i style="background:var(--crit)"></i>&lt; 3σ</span></div>
+        </div>
+        <div class="qcard">
+          <h3 class="qh">Distribution vs tolerance · <b id="qHistT"></b></h3>
+          <canvas class="qcanvas" id="qHist" role="img" aria-label="Histogram of the selected CTQ with tolerance limits and plus or minus 3 and 6 sigma spans"></canvas>
+          <p class="qnote" id="qHistN"></p>
+        </div>
+        <div class="qcard">
+          <h3 class="qh">Control chart · last 80 holes · <b id="qCtlT"></b></h3>
+          <canvas class="qcanvas" id="qCtl" role="img" aria-label="Individuals control chart of the selected CTQ with control and tolerance limits"></canvas>
+          <p class="qnote" id="qCtlN"></p>
+        </div>
+      </div>
+      <p class="qnote">Sigma level = 3 × Cpk, with σ estimated within the process (average moving range ÷ 1.128). Estimated DPMO applies the conventional 1.5σ long-term shift, so <b>6σ ≈ Cpk 2.00 ≈ 3.4 defects per million</b>. Cpk 1.33 (4σ) is the usual minimum for a capable aerospace CTQ. Ppk uses overall σ and shows the effect of drift and outliers.</p>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-h">Customer pain points · top three by significance <span class="count">synthetic irritant log · Nov 2025 – Oct 2026</span></div>
+    <div class="pain">
+      <div class="pcol">
+        <h3 class="qh">All pain points · significance = occurrences × severity (1–10)</h3>
+        <div class="pareto" id="pareto"></div>
+        <p class="qnote" id="paretoN"></p>
+      </div>
+      <div class="pcol">
+        <h3 class="qh">Top three · occurrences over 12 months</h3>
+        <div class="top3" id="top3"></div>
+        <p class="qnote">Each pain point is traced back to the join-cell signal that causes it, and the <b>this run</b> line counts the same failure mode live in the simulation above.</p>
+      </div>
     </div>
   </section>
 
@@ -570,7 +727,7 @@ function reset() {
   robots = ROBOT_DEFS.map(([id, side, x], i) => ({ id, side, by: 5.6 * side, bx: x, home: x, q: [], cur: -1, phase: 'idle', pt: 0, dur: 0, from: null, to: null, w: null, mag: START_MAG[i], vib: 1.15, vh: [], fault: 0, faultT: 0, flagged: false, status: 'active', stopAfter: false, done: 0, refillReq: false, hist: [], bxFrom: x, bxTo: x, maintT: 0, spindleOK: false, wait: null, lastTh: 45 * deg, bay: x }));
   robots.forEach(r => { r.w = rest(r); for (let i = 0; i < 120; i++) r.vh.push(1.1 + Math.random() * .12); });
   agvs = [{ id: 'AGV-1', x: -8.6, y: 1.3, home: [-8.6, 1.3] }, { id: 'AGV-2', x: -8.6, y: -1.3, home: [-8.6, -1.3] }].map(a => ({ ...a, state: 'idle', path: [], load: null, task: null, horiz: false, t: 0 }));
-  buildHoles(); assignDefault();
+  qReset(); buildHoles(); assignDefault();
   $('#log').innerHTML = ''; logN = 0;
   log('ORC', 'PLAN', `Shipset #1 loaded · ${holes.length} fasteners · 6 robot agents on LH/RH rails`, 'plan');
   log('TWN', 'SYNC', 'Twin bound to cell 07 · OPC UA 50 Hz · Δ < 0.5 mm', 'info');
@@ -687,7 +844,7 @@ function stepRobot(r, dt) {
     case 'fasten': {
       r.pt += dt;
       if (r.pt >= r.dur) {
-        H.st = 2; H.by = r.id; r.mag--; r.done++; r.lastTh = H.th;
+        H.st = 2; H.by = r.id; H.ramp = r.fault ? Math.min(1, (simT - r.faultT) / 7) : 0; r.mag--; r.done++; r.lastTh = H.th;
         qaQ.push({ h: r.cur, t: simT + 1.1 }); r.cur = -1; r.phase = 'idle';
       }
       break;
@@ -800,12 +957,15 @@ function step(dt) {
   for (let i = qaQ.length - 1; i >= 0; i--) {
     const q = qaQ[i]; if (q.t > simT) continue; qaQ.splice(i, 1);
     const h = holes[q.h]; inspected++; gxT = h.x;
-    const bad = !h.rework && (forceDefect || Math.random() < .022);
+    const forced = !h.rework && (forceDefect || Math.random() < .022);
+    const fails = h.rework ? [] : ctqPush(ctqSample(h.ramp || 0, forced), `Shipset #${shipset} · ${h.code}`, true);
+    const bad = !h.rework && fails.length > 0;
     if (bad) {
       forceDefect = false; h.st = 3; h.rework = true; defects++;
       let o = byId(h.owner); if (o.status !== 'active' || o.stopAfter) { o = nearestActive(h.side, h.x, null); h.owner = o.id; }
       if (!o.q.includes(h.i)) o.q.push(h.i);
-      log('QA', 'DEFECT', `Hole ${h.code} · countersink depth +0.07 mm (tol ±0.05) · edge inference ${latV.at(-1)?.toFixed(0) ?? 14} ms`, 'crit');
+      const f0 = fails[0], why = forced ? 'countersink depth +0.07 mm (tol ±0.05)' : `${f0.n.toLowerCase()} ${fq(f0, f0.v.at(-1).v)} ${f0.u} (tol ${specTxt(f0)})`;
+      log('QA', 'DEFECT', `Hole ${h.code} · ${why} · edge inference ${latV.at(-1)?.toFixed(0) ?? 14} ms`, 'crit');
       send('QA', 'ORC', 'crit');
       at(.4, () => { log('ORC', 'REWORK', `${h.code} → ${o.id} · ream to oversize Ø4.9 mm, refit`, 'warn'); send('ORC', o.id, 'warn'); });
     }
@@ -827,7 +987,7 @@ function step(dt) {
   }
 
   if (!completing && holes.every(h => h.st === 2) && !qaQ.length) {
-    completing = true; lastCycle = simT - cycleStart;
+    completing = true; lastCycle = simT - cycleStart; shipsDone++; if (lastCycle > 70) lateShips++;
     log('ORC', 'COMPLETE', `Shipset #${shipset} · ${holes.length} fasteners · cycle ${(simT - cycleStart).toFixed(1)} s · QA sign-off`, 'ok');
     showBanner(`Shipset #${shipset} complete · section released to next station`);
     at(3, () => {
@@ -1061,6 +1221,293 @@ function updateUI() {
   updateInd();
 }
 
+/* ───────── CTQ tolerance control · synthetic measurements ───────── */
+const CTQ = [
+  { id: 'dia', n: 'Hole diameter', sub: 'Ø4.85 mm Hi-Lok hole', u: 'mm', dp: 3, nom: 4.850, lsl: 4.810, usl: 4.890, mu: 4.852, sd: .0068 },
+  { id: 'csk', n: 'Countersink depth', sub: '100° countersink', u: 'mm', dp: 3, nom: 1.200, lsl: 1.150, usl: 1.250, mu: 1.204, sd: .0115 },
+  { id: 'flu', n: 'Head flushness', sub: 'Head to skin · + is proud', u: 'mm', dp: 3, nom: .025, lsl: -.050, usl: .100, mu: .035, sd: .016 },
+  { id: 'per', n: 'Perpendicularity', sub: 'Hole axis to skin normal', u: '°', dp: 2, nom: 0, lsl: null, usl: .50, mu: .18, sd: .06 },
+  { id: 'edg', n: 'Edge distance', sub: 'Hole centre to strap edge', u: 'mm', dp: 2, nom: 9.60, lsl: 9.10, usl: 10.10, mu: 9.62, sd: .075 },
+];
+const QWIN = 400, QSEED = 360;
+let selCtq = 'flu', lateShips = 0, shipsDone = 0, ctqLive = 0, ctlHover = null, histHit = [], ctlGeo = null;
+const gauss = () => { let u = 0, v = 0; while (!u) u = Math.random(); while (!v) v = Math.random(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v); };
+const outOf = (c, v) => v > c.usl || (c.lsl != null && v < c.lsl);
+const fq = (c, v, extra = 0) => v.toFixed(c.dp + extra);
+const specTxt = c => c.lsl == null ? `≤ ${fq(c, c.usl)} ${c.u}` : Math.abs((c.usl - c.nom) - (c.nom - c.lsl)) < 1e-9 ? `${fq(c, c.nom)} ± ${fq(c, c.usl - c.nom)} ${c.u}` : `${fq(c, c.lsl)} … ${fq(c, c.usl)} ${c.u}`;
+function ctqSample(ramp, bad) {
+  const [D, C, F, P, E] = CTQ;
+  return {
+    dia: D.mu + .03 * ramp + gauss() * D.sd * (1 + 1.5 * ramp),
+    csk: bad ? 1.272 + Math.abs(gauss()) * .005 : C.mu + gauss() * C.sd,
+    flu: bad ? -.062 - Math.abs(gauss()) * .005 : F.mu + gauss() * F.sd,
+    per: Math.abs(P.mu + .14 * ramp + gauss() * P.sd * (1 + ramp)),
+    edg: E.mu + gauss() * E.sd,
+  };
+}
+function ctqPush(m, code, live) {
+  const fails = [];
+  CTQ.forEach(c => {
+    const v = m[c.id], o = outOf(c, v);
+    c.v.push({ v, o, code }); if (c.v.length > QWIN) c.v.shift();
+    if (live) { c.ln++; if (o) c.lo++; }
+    if (o) fails.push(c);
+  });
+  if (live) ctqLive++;
+  return fails;
+}
+function qReset() {
+  lateShips = 0; shipsDone = 0; ctqLive = 0; ctlHover = null;
+  CTQ.forEach(c => { c.v = []; c.ln = 0; c.lo = 0; });
+  for (let i = 0; i < QSEED; i++) ctqPush(ctqSample(0, Math.random() < .022), 'synthetic history', false);
+}
+function erfc(x) {
+  const z = Math.abs(x), t = 1 / (1 + .5 * z);
+  const r = t * Math.exp(-z * z - 1.26551223 + t * (1.00002368 + t * (.37409196 + t * (.09678418 + t * (-.18628806 + t * (.27886807 + t * (-1.13520398 + t * (1.48851587 + t * (-.82215223 + t * .17087277)))))))));
+  return x >= 0 ? r : 2 - r;
+}
+const tail = z => z > 30 ? 0 : .5 * erfc(z / Math.SQRT2);
+function cstats(c) {
+  const a = c.v.map(o => o.v), n = a.length; if (n < 20) return null;
+  const mean = a.reduce((s, v) => s + v, 0) / n;
+  const sd = Math.sqrt(a.reduce((s, v) => s + (v - mean) ** 2, 0) / (n - 1));
+  let mr = 0; for (let i = 1; i < n; i++) mr += Math.abs(a[i] - a[i - 1]);
+  const sw = mr / (n - 1) / 1.128;
+  const zu = (c.usl - mean) / sw, zl = c.lsl == null ? Infinity : (mean - c.lsl) / sw;
+  const cpk = Math.min(zu, zl) / 3, cp = c.lsl == null ? null : (c.usl - c.lsl) / (6 * sw);
+  const ppk = Math.min((c.usl - mean) / sd, c.lsl == null ? Infinity : (mean - c.lsl) / sd) / 3;
+  const dpmo = 1e6 * (tail(zu - 1.5) + (c.lsl == null ? 0 : tail(zl - 1.5)));
+  const out = c.v.filter(o => o.o).length;
+  return { n, mean, sd, sw, cp, cpk, ppk, sig: 3 * cpk, dpmo, out, ppm: out / n * 1e6, ucl: mean + 3 * sw, lcl: mean - 3 * sw };
+}
+const capSt = s => !s ? 'idle' : s.cpk >= 2 ? 'six' : s.cpk >= 1.33 ? 'ok' : s.cpk >= 1 ? 'warn' : 'crit';
+const CAP_TXT = { six: 'Six Sigma', ok: 'Capable', warn: 'Marginal', crit: 'Not capable', idle: 'No data' };
+const CAP_COL = { six: 'var(--edge)', ok: 'color-mix(in srgb, var(--edge) 50%, var(--faint))', warn: 'var(--warn)', crit: 'var(--crit)', idle: 'var(--faint)' };
+const toneOf = st => st === 'six' ? 'ok' : st;
+const fmtDpmo = v => v < 10 ? v.toFixed(1) : Math.round(v).toLocaleString('en-US');
+const fmtInt = v => Math.round(v).toLocaleString('en-US');
+
+/* tooltip shared by the quality and pain-point views */
+const qtip = document.createElement('div'); qtip.className = 'qtip'; qtip.hidden = true; document.body.appendChild(qtip);
+function showTip(html, cx, cy) {
+  qtip.innerHTML = html; qtip.hidden = false;
+  const r = qtip.getBoundingClientRect(); let l = cx + 14, t = cy + 14;
+  if (l + r.width > innerWidth - 8) l = cx - r.width - 14;
+  if (t + r.height > innerHeight - 8) t = cy - r.height - 14;
+  qtip.style.left = Math.max(8, l) + 'px'; qtip.style.top = Math.max(8, t) + 'px';
+}
+const hideTip = () => { qtip.hidden = true; };
+document.addEventListener('mousemove', e => {
+  const el = e.target.closest && e.target.closest('[data-tip]');
+  if (el) showTip(el.dataset.tip, e.clientX, e.clientY);
+  else if (!(e.target.closest && e.target.closest('.qcanvas'))) hideTip();
+});
+
+/* table + ladder scaffolding */
+const ctqBody = $('#ctq tbody');
+const QK = ['n', 'mean', 'sw', 'cp', 'cpk', 'ppk', 'sig', 'dpmo', 'out'];
+ctqBody.innerHTML = CTQ.map(c => `<tr data-c="${c.id}" tabindex="0"><td><div class="ind-name"><b>${esc(c.n)}</b><small>${esc(c.sub)}</small></div></td><td class="thr">${esc(specTxt(c))}</td>${QK.map(k => `<td class="lv" data-k="${k}">–</td>`).join('')}<td><span class="pill" data-p></span></td></tr>`).join('');
+const SIGMAX = 7, REFS = [3, 4, 5, 6];
+$('#ladAx').innerHTML = REFS.map(k => `<span class="${k === 6 ? 'six' : ''}" style="left:${k / SIGMAX * 100}%">${k}σ<small><br>${(k / 3).toFixed(2)}</small></span>`).join('');
+$('#ladder').innerHTML = CTQ.map(c => `<button type="button" class="lad-row" data-c="${c.id}"><span class="lad-n">${esc(c.n)}</span><span class="lad-track">${REFS.map(k => `<span class="ref${k === 6 ? ' six' : ''}" style="left:${k / SIGMAX * 100}%"></span>`).join('')}<i class="lad-bar"></i></span><span class="lad-v">–</span></button>`).join('');
+const pickCtq = id => { selCtq = id; ctlHover = null; updateQuality(); };
+ctqBody.addEventListener('click', e => { const tr = e.target.closest('tr[data-c]'); if (tr) pickCtq(tr.dataset.c); });
+ctqBody.addEventListener('keydown', e => { const tr = e.target.closest('tr[data-c]'); if (tr && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); pickCtq(tr.dataset.c); } });
+$('#ladder').addEventListener('click', e => { const b = e.target.closest('[data-c]'); if (b) pickCtq(b.dataset.c); });
+
+function cprep(c) {
+  const w = c.clientWidth, h = c.clientHeight, pw = Math.round(w * dpr), ph = Math.round(h * dpr);
+  if (c.width !== pw || c.height !== ph) { c.width = pw; c.height = ph; }
+  const x = c.getContext('2d'); x.setTransform(dpr, 0, 0, dpr, 0, 0); x.clearRect(0, 0, w, h); return [x, w, h];
+}
+const MONO = '400 10px "JetBrains Mono", monospace';
+function vline(x, X, y0, y1, col, dash, lw = 1) { x.setLineDash(dash); x.strokeStyle = col; x.lineWidth = lw; x.beginPath(); x.moveTo(X, y0); x.lineTo(X, y1); x.stroke(); x.setLineDash([]); }
+
+function drawHist(c, s) {
+  const [x, w, h] = cprep($('#qHist')); histHit = [];
+  if (!s || w < 40) return;
+  const lo = c.lsl == null ? 0 : c.lsl, span = c.usl - lo;
+  let x0 = c.lsl == null ? 0 : Math.min(c.lsl - .25 * span, s.mean - 6.4 * s.sw);
+  let x1 = Math.max(c.usl + .25 * span, s.mean + 6.4 * s.sw);
+  x0 = Math.max(x0, lo - span); x1 = Math.min(x1, c.usl + span);
+  const L = 8, R = 8, T = 50, B = 22, pw = w - L - R, ph = h - T - B;
+  const X = v => L + (v - x0) / (x1 - x0) * pw;
+  const NB = 36, bw = (x1 - x0) / NB, cnt = new Array(NB).fill(0);
+  c.v.forEach(o => { const i = Math.floor((o.v - x0) / bw); if (i >= 0 && i < NB) cnt[i]++; });
+  const pdf = v => s.n * bw * Math.exp(-.5 * ((v - s.mean) / s.sd) ** 2) / (s.sd * Math.sqrt(2 * Math.PI));
+  const ymax = Math.max(...cnt, pdf(s.mean)) * 1.06, Y = v => T + ph - v / ymax * ph;
+  // tolerance zone
+  const tA = c.lsl == null ? L : X(c.lsl), tB = X(c.usl);
+  x.fillStyle = hexA(COL.edge, .06); x.fillRect(tA, T - 6, tB - tA, ph + 6);
+  // bars
+  cnt.forEach((n, i) => {
+    const a = X(x0 + i * bw), b = X(x0 + (i + 1) * bw), mid = x0 + (i + .5) * bw;
+    histHit.push({ a, b, t: `${fq(c, x0 + i * bw)} – ${fq(c, x0 + (i + 1) * bw)} ${c.u}<br>${n} hole${n === 1 ? '' : 's'}${outOf(c, mid) ? ' · out of tolerance' : ''}` });
+    if (!n) return;
+    x.fillStyle = outOf(c, mid) ? COL.crit : hexA(COL.accent, .75);
+    const top = Y(n), bx = a + 1, bwid = Math.max(1, b - a - 2);
+    x.beginPath(); if (x.roundRect) x.roundRect(bx, top, bwid, Y(0) - top, [2, 2, 0, 0]); else x.rect(bx, top, bwid, Y(0) - top); x.fill();
+  });
+  // fitted normal (overall σ)
+  x.beginPath(); for (let i = 0; i <= 140; i++) { const v = x0 + (x1 - x0) * i / 140; i ? x.lineTo(X(v), Y(pdf(v))) : x.moveTo(X(v), Y(pdf(v))); }
+  x.strokeStyle = hexA(COL.fg, .65); x.lineWidth = 1.5; x.stroke();
+  // baseline, nominal, spec limits
+  x.strokeStyle = COL.faint || '#3f5363'; x.lineWidth = 1; x.beginPath(); x.moveTo(L, Y(0) + .5); x.lineTo(L + pw, Y(0) + .5); x.stroke();
+  if (c.lsl != null) vline(x, X(c.nom), T - 6, Y(0), hexA(COL.fg, .3), [1, 3]);
+  vline(x, tB, T - 6, Y(0), COL.crit, [4, 3], 1.5);
+  if (c.lsl != null) vline(x, tA, T - 6, Y(0), COL.crit, [4, 3], 1.5);
+  x.font = MONO; x.fillStyle = COL.muted; x.textBaseline = 'top';
+  const axl = (v, txt, al) => { const tw = x.measureText(txt).width, l = al === 'right' ? X(v) - tw : al === 'center' ? X(v) - tw / 2 : X(v); x.textAlign = 'left'; x.fillText(txt, clamp(l, 2, w - tw - 2), Y(0) + 6); };
+  if (c.lsl != null) { axl(c.lsl, `LSL ${fq(c, c.lsl)}`, 'right'); axl(c.nom, 'NOM', 'center'); }
+  else axl(0, '0', 'left');
+  axl(c.usl, `USL ${fq(c, c.usl)}`, 'left');
+  // ±3σ and ±6σ spans (within σ)
+  const fits6 = (c.lsl == null || s.mean - 6 * s.sw >= c.lsl) && s.mean + 6 * s.sw <= c.usl;
+  const bracket = (k, y, col, txt) => {
+    const ra = s.mean - k * s.sw, rb = s.mean + k * s.sw, a = Math.max(L, X(ra)), b = Math.min(L + pw, X(rb));
+    x.strokeStyle = col; x.lineWidth = 1.5; x.beginPath();
+    x.moveTo(a, y + 6); x.lineTo(a, y); x.lineTo(b, y); x.lineTo(b, y + 6); x.stroke();
+    vline(x, X(s.mean), y - 2, y + 4, col, [], 1.5);
+    x.fillStyle = COL.fg; x.font = '500 10px "JetBrains Mono", monospace'; x.textAlign = 'center'; x.textBaseline = 'bottom';
+    x.fillText(txt, clamp((a + b) / 2, L + 70, L + pw - 70), y - 3);
+  };
+  bracket(6, 16, fits6 ? COL.edge : COL.crit, `μ ± 6σ ${fits6 ? 'inside' : 'exceeds'} tolerance`);
+  bracket(3, 38, COL.muted, 'μ ± 3σ');
+  x.textBaseline = 'alphabetic';
+  return fits6;
+}
+
+function drawCtl(c, s) {
+  const cvs = $('#qCtl'), [x, w, h] = cprep(cvs); ctlGeo = null;
+  if (!s || w < 40) return { oc: 0, os: 0, n: 0 };
+  const d = c.v.slice(-80), n = d.length, vals = d.map(o => o.v);
+  let lo = Math.min(...vals, s.lcl, c.lsl ?? s.lcl), hi = Math.max(...vals, s.ucl, c.usl);
+  const pad = (hi - lo) * .07; lo -= pad; hi += pad;
+  const L = 8, R = 50, T = 10, B = 12, pw = w - L - R, ph = h - T - B;
+  const X = i => L + (n < 2 ? 0 : i / (n - 1)) * pw, Y = v => T + (hi - v) / (hi - lo) * ph;
+  const lines = [
+    { v: c.usl, col: COL.crit, dash: [4, 3], t: 'USL', lw: 1.5 },
+    c.lsl != null ? { v: c.lsl, col: COL.crit, dash: [4, 3], t: 'LSL', lw: 1.5 } : null,
+    { v: s.ucl, col: hexA(COL.warn, .8), dash: [2, 3], t: 'UCL', lw: 1 },
+    { v: s.lcl, col: hexA(COL.warn, .8), dash: [2, 3], t: 'LCL', lw: 1 },
+    { v: s.mean, col: hexA(COL.fg, .35), dash: [], t: 'x̄', lw: 1 },
+  ].filter(o => o && o.v >= lo && o.v <= hi);
+  lines.forEach(o => { x.setLineDash(o.dash); x.strokeStyle = o.col; x.lineWidth = o.lw; x.beginPath(); x.moveTo(L, Y(o.v)); x.lineTo(L + pw, Y(o.v)); x.stroke(); x.setLineDash([]); });
+  // right-hand labels, nudged apart
+  const lab = lines.map(o => ({ t: o.t, y: Y(o.v) })).sort((a, b) => a.y - b.y);
+  for (let i = 1; i < lab.length; i++) if (lab[i].y - lab[i - 1].y < 11) lab[i].y = lab[i - 1].y + 11;
+  x.font = MONO; x.fillStyle = COL.muted; x.textAlign = 'left'; x.textBaseline = 'middle';
+  lab.forEach(o => x.fillText(o.t, L + pw + 6, clamp(o.y, 6, h - 6)));
+  if (ctlHover != null && ctlHover < n) vline(x, X(ctlHover), T, T + ph, hexA(COL.fg, .3), []);
+  x.beginPath(); vals.forEach((v, i) => i ? x.lineTo(X(i), Y(v)) : x.moveTo(X(i), Y(v)));
+  x.strokeStyle = hexA(COL.accent, .85); x.lineWidth = 1.5; x.stroke();
+  let oc = 0, os = 0;
+  d.forEach((o, i) => {
+    const ooc = o.v > s.ucl || o.v < s.lcl; if (o.o) os++; else if (ooc) oc++;
+    x.beginPath(); x.arc(X(i), Y(o.v), o.o || ooc || i === ctlHover ? 3.5 : 2, 0, 7);
+    x.fillStyle = o.o ? COL.crit : ooc ? COL.warn : COL.accent; x.fill();
+    if (o.o || ooc || i === ctlHover) { x.strokeStyle = COL.bg; x.lineWidth = 2; x.stroke(); }
+  });
+  x.textBaseline = 'alphabetic';
+  ctlGeo = { L, pw, n, d, s, c };
+  return { oc, os, n };
+}
+$('#qHist').addEventListener('mousemove', e => {
+  const r = e.currentTarget.getBoundingClientRect(), mx = e.clientX - r.left, b = histHit.find(o => mx >= o.a && mx < o.b);
+  b ? showTip(b.t, e.clientX, e.clientY) : hideTip();
+});
+$('#qCtl').addEventListener('mousemove', e => {
+  if (!ctlGeo || !ctlGeo.n) return;
+  const { L, pw, n, d, s, c } = ctlGeo, r = e.currentTarget.getBoundingClientRect();
+  const i = clamp(Math.round((e.clientX - r.left - L) / pw * (n - 1)), 0, n - 1), o = d[i];
+  ctlHover = i; drawCtl(c, s);
+  const st = o.o ? 'Out of tolerance' : (o.v > s.ucl || o.v < s.lcl) ? 'Beyond control limit' : 'In control';
+  showTip(`${esc(o.code)}<br>${esc(c.n)} ${fq(c, o.v)} ${c.u}<br>${st}`, e.clientX, e.clientY);
+});
+['#qHist', '#qCtl'].forEach(id => $(id).addEventListener('mouseleave', () => { hideTip(); if (id === '#qCtl') ctlHover = null; }));
+
+/* ───────── customer pain points · synthetic irritant log ───────── */
+const MONTHS = ['Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'];
+const PAIN = [
+  { n: 'Fastener flushness / aero step', where: 'Raised at airline acceptance and paint', sev: 8, m: [14, 16, 13, 15, 12, 14, 11, 13, 12, 10, 11, 9], drv: 'Head flushness and countersink depth CTQs', live: () => `${CTQ[2].lo} flushness out-of-tol holes · ${CTQ[1].lo} countersink` },
+  { n: 'Oversize-fastener concessions', where: 'Repair records the airline inherits', sev: 7, m: [10, 9, 11, 8, 9, 10, 8, 9, 7, 8, 6, 5], drv: 'QA defects reworked by reaming to Ø4.9 mm', live: () => `${defects} hole${defects === 1 ? '' : 's'} sent to oversize rework` },
+  { n: 'Late section delivery', where: 'Slips the FAL slot and delivery date', sev: 9, m: [7, 8, 6, 7, 5, 6, 6, 7, 5, 6, 4, 5], drv: 'Shipset cycle against the 70 s takt plan', live: () => shipsDone ? `${lateShips} of ${shipsDone} shipset${shipsDone === 1 ? '' : 's'} over takt` : 'first shipset still in the cell' },
+  { n: 'Sealant squeeze-out / paint finish', where: 'Cosmetic findings at the join line', sev: 4, m: [12, 11, 13, 10, 11, 12, 10, 11, 12, 9, 10, 9] },
+  { n: 'Traceability / documentation errors', where: 'Missing or wrong fastener records', sev: 5, m: [5, 4, 6, 4, 5, 3, 5, 4, 4, 5, 4, 5] },
+  { n: 'Cabin noise near join frame', where: 'Reported in service', sev: 6, m: [2, 3, 2, 1, 2, 3, 2, 2, 1, 2, 3, 1] },
+  { n: 'Corrosion at first heavy check', where: 'Found at fastener holes in service', sev: 9, m: [1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1] },
+];
+PAIN.forEach(p => { p.occ = p.m.reduce((a, b) => a + b, 0); p.score = p.occ * p.sev; });
+PAIN.sort((a, b) => b.score - a.score);
+const painTot = PAIN.reduce((s, p) => s + p.score, 0), painMax = PAIN[0].score;
+{
+  let cum = 0;
+  $('#pareto').innerHTML = PAIN.map((p, i) => {
+    cum += p.score;
+    const tip = `${esc(p.n)}<br>${p.occ} occurrences × severity ${p.sev} = ${fmtInt(p.score)}<br>Cumulative ${(cum / painTot * 100).toFixed(0)} % of weighted impact`;
+    return `<div class="pp${i < 3 ? ' top' : ''}" data-tip="${esc(tip)}"><span class="rk">${String(i + 1).padStart(2, '0')}</span><span class="nm">${esc(p.n)}<small>${esc(p.where)} · sev ${p.sev}</small></span><span class="trk"><span class="bw"><i style="width:${(p.score / painMax * 100).toFixed(1)}%"></i></span><span>${fmtInt(p.score)} · ${p.occ}×</span></span></div>`;
+  }).join('');
+  const top = PAIN.slice(0, 3), topScore = top.reduce((s, p) => s + p.score, 0), topOcc = top.reduce((s, p) => s + p.occ, 0);
+  const allOcc = PAIN.reduce((s, p) => s + p.occ, 0), byOcc = PAIN.slice().sort((a, b) => b.occ - a.occ);
+  const hidden = byOcc.find(p => PAIN.indexOf(p) >= 3 && byOcc.indexOf(p) < 3);
+  $('#paretoN').innerHTML = `The top three account for <b>${(topScore / painTot * 100).toFixed(0)} %</b> of severity-weighted customer impact and <b>${topOcc} of ${allOcc}</b> logged occurrences.` +
+    (hidden ? ` ${esc(hidden.n)} happens often (${hidden.occ}×) but ranks lower because its severity is only ${hidden.sev}/10.` : '');
+  $('#top3').innerHTML = top.map((p, i) => {
+    const l3 = p.m.slice(9).reduce((a, b) => a + b, 0), p3 = p.m.slice(6, 9).reduce((a, b) => a + b, 0), dlt = (l3 - p3) / p3 * 100, mx = Math.max(...p.m);
+    return `<article class="pcard">
+      <span class="rk">#${i + 1} · significance ${fmtInt(p.score)} · severity ${p.sev}/10</span>
+      <h4>${esc(p.n)}</h4>
+      <div class="big">${p.occ}<em>occurrences · 12 months</em></div>
+      <div class="dl">Last 3 months <b>${l3}</b> vs prior 3 <b>${p3}</b> · <b class="${dlt <= 0 ? 'dn' : 'upx'}">${dlt <= 0 ? '▼' : '▲'} ${Math.abs(dlt).toFixed(0)} %</b></div>
+      <div><div class="mbars" aria-label="Monthly occurrences">${p.m.map((v, j) => `<i style="height:${(v / mx * 100).toFixed(0)}%" data-tip="${MONTHS[j]} ${j < 2 ? 2025 : 2026} · ${v} occurrence${v === 1 ? '' : 's'}"></i>`).join('')}</div>
+      <div class="mlab"><span>Nov 25</span><span>Oct 26</span></div></div>
+      <dl><div><dt>Cell driver</dt><dd>${esc(p.drv)}</dd></div><div><dt>This run</dt><dd class="live" data-live="${i}">–</dd></div></dl>
+    </article>`;
+  }).join('');
+}
+
+function updateQuality() {
+  const S = {}; CTQ.forEach(c => { S[c.id] = cstats(c); });
+  let six = 0, low = [], outs = 0;
+  ctqBody.querySelectorAll('tr[data-c]').forEach(tr => {
+    const c = CTQ.find(o => o.id === tr.dataset.c), s = S[c.id], st = capSt(s), tone = toneOf(st);
+    tr.className = `r-${tone}`; tr.setAttribute('aria-selected', String(c.id === selCtq));
+    const set = (k, t, col) => { const el = tr.querySelector(`[data-k="${k}"]`); el.textContent = t; el.style.color = col || ''; };
+    if (!s) QK.forEach(k => set(k, '–'));
+    else {
+      set('n', s.n); set('mean', fq(c, s.mean)); set('sw', fq(c, s.sw, 1));
+      set('cp', s.cp == null ? '—' : s.cp.toFixed(2)); set('cpk', s.cpk.toFixed(2), `var(--${tone === 'ok' ? 'fg' : tone})`); set('ppk', s.ppk.toFixed(2));
+      set('sig', s.sig.toFixed(1) + 'σ'); set('dpmo', fmtDpmo(s.dpmo)); set('out', `${s.out} · ${fmtInt(s.ppm)} ppm`, s.out ? 'var(--crit)' : '');
+      if (st === 'six') six++; if (st === 'warn' || st === 'crit') low.push(c.n);
+    }
+    outs += c.lo;
+    const p = tr.querySelector('[data-p]'); p.className = `pill t-${tone}`; p.textContent = CAP_TXT[st];
+  });
+  $('#qtN').textContent = fmtInt(ctqLive);
+  $('#qtSix').textContent = `${six} / ${CTQ.length}`;
+  $('#qtLow').textContent = low.length; $('#qtLow').style.color = low.length ? 'var(--warn)' : '';
+  $('#qtLowN').textContent = low.length ? low.join(' · ') : 'all CTQs capable';
+  $('#qtOut').textContent = outs; $('#qtOut').style.color = outs ? 'var(--crit)' : '';
+  $('#ladder').querySelectorAll('.lad-row').forEach(b => {
+    const c = CTQ.find(o => o.id === b.dataset.c), s = S[c.id], st = capSt(s), bar = b.querySelector('.lad-bar');
+    b.setAttribute('aria-pressed', String(c.id === selCtq));
+    bar.style.width = s ? `${clamp(s.sig / SIGMAX, 0, 1) * 100}%` : '0';
+    bar.style.setProperty('--c', CAP_COL[st]);
+    b.querySelector('.lad-v').textContent = s ? s.sig.toFixed(1) + 'σ' : '–';
+    b.dataset.tip = s ? `${esc(c.n)} · ${CAP_TXT[st]}<br>Cpk ${s.cpk.toFixed(2)} → ${s.sig.toFixed(1)}σ<br>Est. ${fmtDpmo(s.dpmo)} DPMO long-term<br>${s.sig >= 6 ? 'Meets' : `${(6 - s.sig).toFixed(1)}σ short of`} Six Sigma` : esc(c.n);
+  });
+  const c = CTQ.find(o => o.id === selCtq), s = S[selCtq];
+  $('#qHistT').textContent = c.n; $('#qCtlT').textContent = c.n;
+  drawHist(c, s); const k = drawCtl(c, s);
+  if (s) {
+    $('#qHistN').innerHTML = c.lsl == null
+      ? `μ + 6σ = <b>${fq(c, s.mean + 6 * s.sw)} ${c.u}</b> against USL ${fq(c, c.usl)} ${c.u}. Bars in red are out of tolerance; the curve is the fitted normal.`
+      : `A ±6σ process needs <b>${fq(c, 12 * s.sw)} ${c.u}</b> of the ${fq(c, c.usl - c.lsl)} ${c.u} tolerance (${(12 * s.sw / (c.usl - c.lsl) * 100).toFixed(0)} %); 6σ requires ≤ 100 % with the mean centred. Mean offset from nominal ${s.mean - c.nom >= 0 ? '+' : ''}${fq(c, s.mean - c.nom)} ${c.u}.`;
+    $('#qCtlN').innerHTML = `<b>${k.oc}</b> point${k.oc === 1 ? '' : 's'} beyond the control limits and <b>${k.os}</b> out of tolerance in the last ${k.n} holes. Control limits are x̄ ± 3σ within; spindle wear pushes diameter and perpendicularity upward.`;
+  }
+  document.querySelectorAll('[data-live]').forEach(el => { el.textContent = PAIN[+el.dataset.live].live(); });
+}
+
 /* ───────── KPIs & KRIs ───────── */
 const p95 = () => { if (!latV.length) return null; const s = latV.slice().sort((a, b) => a - b); return s[Math.floor(s.length * .95)]; };
 const forecast = () => { if (completing) return lastCycle; const d = holes.filter(h => h.st === 2).length; return d < 15 ? null : (simT - cycleStart) * holes.length / d; };
@@ -1109,6 +1556,7 @@ function updateInd() {
   const l = p95(); $('#fEdge').textContent = l == null ? '–' : l.toFixed(0);
   $('#fTwin').textContent = twinD.toFixed(2);
   $('#fAgent').textContent = lastReplan == null ? 'none yet' : lastReplan.toFixed(1) + ' s';
+  updateQuality();
 }
 function drawSpark(r) {
   const c = $('#spark'); if (!c) return; const w = c.clientWidth, h = c.clientHeight; c.width = w * dpr; c.height = h * dpr;
